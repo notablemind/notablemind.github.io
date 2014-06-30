@@ -1,0 +1,12 @@
+
+<a id="one">something</a>
+<script>
+    var blob = new Blob(['{"one": 45}'], {type: 'application/json'})
+    var a = document.getElementById('one')
+    a.onclick = function () {
+        var url = URL.createObjectURL(blob)
+        a.href = url
+        a.download = 'theone-name.json'
+    }
+</script>
+

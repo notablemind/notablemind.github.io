@@ -1,0 +1,768 @@
+#main {
+  padding-left: 20px;
+}
+.treed__item {
+  list-style: none;
+  padding-left: 20px;
+  position: relative;
+  border-radius: 10px;
+}
+.treed__body {
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+.treed__item.collapsed .treed__body {
+  /*background-color: #eef;*/
+
+}
+.treed__item.selected .treed__head .treed__body {
+  background-color: #d2f6ff;
+}
+.treed__item.active > .treed__head .treed__body {
+  background-color: #afc;
+}
+.treed__item.collapsed > .treed__children {
+  display: none;
+}
+.treed__item--parent {
+  /*border-left: 1px solid black;*/
+
+}
+.treed__collapser {
+  position: relative;
+  display: none;
+  cursor: pointer;
+}
+.treed__item--parent > .treed__head .treed__collapser {
+  display: block;
+}
+.treed__collapser::before {
+  content: "-";
+  position: absolute;
+  left: 6px;
+  top: -1px;
+  font-weight: bold;
+  font-family: monospace;
+  cursor: pointer;
+  font-size: 20px;
+}
+.treed__item.collapsed .treed__collapser::before {
+  content: "+";
+}
+.treed__children {
+  padding: 0;
+  margin: 0;
+}
+.treed__body {
+  min-height: 20px;
+  display: flex;
+  padding-left: 20px;
+  flex-direction: column;
+}
+.treed__body:hover {
+  border-radius: 10px;
+  background-color: #ccc;
+}
+.treed__head {
+  position: relative;
+}
+.treed__default-node--done,
+.treed__default-node--done input {
+  text-decoration: line-through;
+  color: #777;
+}
+.treed__body input {
+  border: none;
+  margin: 0;
+  display: block;
+  font-size: 16px;
+  padding: 3px 7px;
+  font-family: sans-serif;
+  background-color: #7d9;
+  border-radius: 10px;
+}
+.treed__input {
+  white-space: pre-wrap;
+}
+.treed__input:focus {
+  outline: none;
+}
+.treed__text > p {
+  margin: 0;
+}
+.treed__body input:focus {
+  outline: none;
+}
+.treed__text,
+.treed__input {
+  padding: 3px 7px;
+  min-height: 18px;
+  font-size: 16px;
+  display: block;
+  font-family: sans-serif;
+}
+.treed__input div {
+  padding: 0;
+  margin: 0;
+  min-height: 18px;
+  display: block;
+}
+/** moving **/
+.treed__mover {
+  position: absolute;
+  padding: 3px 5px;
+  display: none;
+  cursor: move;
+  right: 2px;
+  top: 0px;
+}
+.treed__mover::before {
+  content: 'M';
+  font-weight: bold;
+}
+.treed__head:hover .treed__mover {
+  display: block;
+}
+.treed__drop-shadow {
+  position: fixed;
+  background-color: black;
+  opacity: .2;
+}
+.treed__item.dropping,
+.treed__item.dropping-child > .treed__head {
+  outline: 2px solid #afc;
+  border-radius: 10px;
+}
+.treed__item.moving {
+  background-color: #eee;
+  opacity: .5;
+}
+.treed.moving .treed__head:hover {
+  background-color: transparent;
+}
+.treed.moving .treed__head:hover .treed__mover {
+  display: none;
+}
+.treed__item--parent > .treed__head .treed__collapser {
+  display: none;
+}
+.treed__item--parent > .treed__head:hover .treed__collapser {
+  display: block;
+}
+.treed__bullet::before {
+  content: "\2022";
+  cursor: pointer;
+}
+.treed__bullet:hover {
+  background-color: #aaa;
+  border-radius: 10px;
+  line-height: 10px;
+  margin-top: 4px;
+}
+.treed__bullet {
+  position: absolute;
+  padding: 3px;
+  left: 24px;
+  font-size: 25px;
+  line-height: 18px;
+  overflow: hidden;
+}
+.treed__collapser:before {
+  left: 4px;
+  width: 20px;
+}
+.treed__body {
+  margin-left: 20px;
+}
+.treed__item--parent.collapsed > .treed__head .treed__bullet {
+  font-size: 40px;
+  line-height: 14px;
+  margin-top: 2px;
+  left: 22px;
+  overflow: hidden;
+  color: #777;
+}
+.treed__item.selected > .treed__head .treed__body {
+  border-radius: 10px;
+}
+.treed > .treed__item.collapsed > .treed__children {
+  display: block;
+}
+.treed > .treed__item {
+  padding-left: 0;
+}
+.treed > .treed__item > .treed__children > li {
+  padding-left: 0;
+}
+.treed > .treed__item > .treed__children > .treed__item > .treed__head > .treed__bullet {
+  left: 25px;
+}
+.treed > .treed__item > .treed__children > .treed__item.collapsed > .treed__head > .treed__bullet {
+  left: 23px;
+}
+.treed > .treed__item > .treed__head .treed__body {
+  padding-left: 0;
+}
+.treed > .treed__item > .treed__head .treed__body input,
+.treed > .treed__item > .treed__head .treed__body > div {
+  padding-left: 10px;
+  font-size: 30px;
+  border-radius: 10px;
+}
+.treed > .treed__item > .treed__head .treed__bullet,
+.treed > .treed__item > .treed__head .treed__mover,
+.treed > .treed__item > .treed__head .treed__collapser {
+  display: none;
+}
+.whiteboard {
+  position: relative;
+  flex: 1;
+  cursor: pointer;
+  overflow: hidden;
+}
+.whiteboard:empty:after {
+  content: 'Double click to create a new node';
+}
+.whiteboard_hline,
+.whiteboard_vline {
+  background-color: #aaf;
+  position: absolute;
+}
+.whiteboard_hline {
+  height: 2px;
+}
+.whiteboard_vline {
+  width: 2px;
+}
+.whiteboard-dropshadow {
+  position: absolute;
+  background-color: #afc;
+  border-radius: 3px;
+  opacity: .7;
+  z-index: 100;
+  pointer-events: none;
+}
+.whiteboard-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.whiteboard-controls {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+.whiteboard-controls button {
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid #aaa;
+  color: black;
+  padding: 5px 7px;
+  font-size: 18px;
+  border-radius: 5px;
+}
+.whiteboard-controls button:hover {
+  background-color: #ddd;
+  color: white;
+}
+.whiteboard_child-handle {
+  position: absolute;
+  z-index: 1000;
+  background-color: #ddd;
+  opacity: .5;
+  width: 300px;
+  font-size: 80%;
+  font-family: sans-serif;
+  border-radius: 5px;
+  padding: 10px;
+  pointer-events: none;
+}
+.whiteboard_child-handle p:first-child {
+  margin-top: 0;
+}
+.whiteboard_child-handle p:last-child {
+  margin-bottom: 0;
+}
+.whiteboard-item {
+  border-radius: 5px;
+  box-shadow: 0 0 5px black;
+  font-family: sans-serif;
+  position: absolute;
+  background-color: white;
+  width: 300px;
+}
+.whiteboard-item--moving {
+  opacity: .7;
+}
+.whiteboard-item--editing {
+  box-shadow: 0 0 5px green;
+}
+.whiteboard-item_zoom {
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  color: #777;
+}
+.whiteboard-item_zoom:hover {
+  color: black;
+}
+.whiteboard-item:hover .whiteboard-item_zoom {
+  display: block;
+}
+.whiteboard-item_input {
+  white-space: pre-wrap;
+}
+.whiteboard-item_input:focus {
+  outline: none;
+}
+.whiteboard-item_title {
+  font-size: 16px;
+  min-height: 18px;
+}
+.whiteboard-item_title p:first-child {
+  margin-top: 0;
+}
+.whiteboard-item_title p:last-child {
+  margin-bottom: 0;
+}
+.whiteboard-item_child {
+  font-size: 80%;
+  list-style: none;
+  padding: 5px 5px 5px 25px;
+  border-radius: 5px;
+  position: relative;
+}
+.whiteboard:not(.whiteboard--moving) .whiteboard-item_child:hover {
+  background-color: #f5f5f5;
+}
+.whiteboard-item_child .handle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 5px 6px;
+  border-radius: 5px;
+  font-size: 10px;
+  line-height: 12px;
+}
+.whiteboard:not(.whiteboard--moving) .whiteboard-item_child .handle:hover {
+  background-color: #aaa;
+}
+.whiteboard-item_child.whiteboard-item_child--parent .handle {
+  padding: 5px 3px 4px;
+  font-size: 16px;
+  color: #777;
+}
+.whiteboard-item_child p:first-child {
+  margin-top: 0;
+}
+.whiteboard-item_child p:last-child {
+  margin-bottom: 0;
+}
+.whiteboard-item_child--moving {
+  background-color: #ccc;
+}
+.whiteboard-item_input,
+.whiteboard-item_title {
+  padding: 10px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.whiteboard-item_body {
+  margin: 0;
+  padding: 0 5px 5px;
+  margin-top: -5px;
+}
+.whiteboard-item_body:empty {
+  display: none;
+}
+.whiteboard-item_footer .zoom {
+  cursor: pointer;
+}
+body {
+  font-family: sans-serif;
+}
+.notablemind--workflowy {
+  margin: 5px auto;
+  max-width: 700px;
+}
+.notablemind--whiteboard {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+.notablemind--whiteboard .wrapper {
+  flex: 1;
+  display: flex;
+}
+.notablemind--whiteboard .main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+#breadcrumb {
+  list-style: none;
+  padding: 0 15px;
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+.treed__bread {
+  display: inline-block;
+  margin: 0 5px 0 0;
+  padding: 5px 10px;
+  cursor: default;
+  position: relative;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+}
+.treed__bread p {
+  margin: 0;
+  padding: 0;
+}
+.treed__bread:hover {
+  border-color: #ccc;
+}
+.treed__bread:not(:last-child):after {
+  position: absolute;
+  content: '\00bb';
+  right: -6px;
+  top: 5px;
+}
+.hello h1 {
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.hello ul {
+  color: orange;
+}
+.header {
+  background-color: white;
+  display: flex;
+}
+.header_title {
+  font-size: 19px;
+  font-family: sans-serif;
+  color: #888;
+  font-weight: normal;
+  margin: 0;
+  padding: 2px 5px;
+}
+.header_spacer {
+  flex: 1;
+}
+.header_links {
+  display: inline-block;
+  list-style: none;
+  margin: 0 10px;
+  padding: 0;
+}
+.header_links li {
+  display: inline-block;
+}
+.m-header-btn,
+.header_link,
+.header_download,
+.header_import,
+.header_logout {
+  padding: 5px 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: #666;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  border: none;
+  background-color: white;
+  margin: 0;
+}
+.m-header-btn:hover,
+.header_link:hover,
+.header_download:hover,
+.header_import:hover,
+.header_logout:hover {
+  background-color: #eee;
+  color: black;
+}
+.header_import:focus {
+  outline: none;
+}
+.header_logout {
+  background-color: white;
+  border: none;
+}
+.header_logout:focus {
+  outline: none;
+}
+.back-drop {
+  position: relative;
+  display: inline-block;
+}
+.back-drop .item {
+  cursor: pointer;
+  padding: 5px 10px;
+  background-color: white;
+  color: #555;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.back-drop .item i {
+  margin-right: 5px;
+}
+.back-drop .item:hover {
+  background-color: #ddf;
+}
+.back-drop_current {
+  cursor: pointer;
+  padding: 5px 10px;
+  background-color: white;
+  color: #555;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.back-drop_current i {
+  margin-right: 5px;
+}
+.back-drop_current:hover {
+  background-color: #ddf;
+}
+.back-drop_choice {
+  cursor: pointer;
+  padding: 5px 10px;
+  background-color: white;
+  color: #555;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.back-drop_choice i {
+  margin-right: 5px;
+}
+.back-drop_choice:hover {
+  background-color: #ddf;
+}
+.back-drop_list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 10;
+  text-align: center;
+  min-width: 120px;
+  display: none;
+}
+.back-drop--showing .back-drop_list {
+  display: block;
+}
+.back-pick {
+  display: flex;
+}
+.back-pick_choice {
+  margin: 10px;
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.back-pick_button {
+  text-align: center;
+  background-color: #15b100;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.back-pick_button:hover {
+  background-color: #00e900;
+}
+.back-pick_button i {
+  margin-right: 10px;
+}
+.back-pick_description {
+  font-size: 14px;
+  color: #777;
+}
+.import-popover {
+  padding: 20px;
+  border: 1px solid #ccc;
+  position: absolute;
+  background-color: white;
+  z-index: 501;
+  left: 50%;
+  top: 50%;
+  width: 350px;
+  margin-left: -175px;
+  margin-top: -75px;
+}
+.m-imp-btn {
+  padding: 3px 7px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.m-imp-btn:hover {
+  background-color: #eee;
+}
+.import-popover_close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-weight: bold;
+  color: #aaa;
+  padding: 3px 7px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.import-popover_close:hover {
+  background-color: #eee;
+}
+.import-popover_close:hover {
+  color: black;
+}
+.import-popover_close:after {
+  content: 'x';
+}
+.import-popover_remove {
+  margin-left: 10px;
+  padding: 3px 7px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.import-popover_remove:after {
+  content: 'x';
+}
+.import-popover_remove:hover {
+  background-color: #eee;
+}
+.import-popover_error {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid darkRed;
+  color: red;
+}
+.import-popover_submit {
+  padding: 3px 7px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+}
+.import-popover_submit:hover {
+  background-color: #eee;
+}
+.m-im-cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: .8;
+}
+.import_dropper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: .8;
+  display: none;
+  color: #094d00;
+  background-color: #77FF7D;
+  padding-top: 100px;
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1000;
+}
+.import_dropper.dropping {
+  display: block;
+}
+.import_dropper:after {
+  content: "Drop anywhere";
+}
+.importer_back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: .8;
+  z-index: 500;
+}
+.ctrlp--hidden {
+  display: none;
+}
+.ctrlp_back {
+  z-index: 50;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(100, 100, 100, 0.1);
+  cursor: pointer;
+}
+.ctrlp_pop {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  margin-left: -300px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  z-index: 51;
+}
+.ctrlp_input {
+  font-size: 24px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  width: 100%;
+}
+.ctrlp_input:focus {
+  outline: none;
+}
+.ctrlp_bottom {
+  flex: 1;
+  overflow-y: auto;
+}
+.ctrlp_list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+.ctrlp_item {
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.ctrlp_item.selected {
+  background-color: #ddd;
+}
+.ctrlp_item:hover {
+  background-color: #eee;
+}
