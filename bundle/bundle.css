@@ -219,6 +219,8 @@
   flex: 1;
   cursor: pointer;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .whiteboard:empty:after {
   content: 'Double click to create a new node';
@@ -241,6 +243,41 @@
   opacity: .7;
   z-index: 100;
   pointer-events: none;
+}
+.rendered p:first-child {
+  margin-top: 0;
+}
+.rendered p:last-child {
+  margin-bottom: 0;
+}
+.whiteboard-input-head,
+.whiteboard-head {
+  font-size: 30px;
+  font-family: sans-serif;
+  padding: 10px 10px 0;
+  cursor: pointer;
+}
+.whiteboard-input-head p:first-child,
+.whiteboard-head p:first-child {
+  margin-top: 0;
+}
+.whiteboard-input-head p:last-child,
+.whiteboard-head p:last-child {
+  margin-bottom: 0;
+}
+.whiteboard-input-head {
+  border: none;
+}
+.whiteboard-input-head:focus {
+  outline: none;
+}
+.whiteboard-body {
+  position: relative;
+  border: 1px solid #aaa;
+  margin: 5px;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 10px;
 }
 .whiteboard-container {
   position: absolute;
@@ -367,7 +404,6 @@
 .whiteboard-item_title {
   padding: 10px 10px;
   font-size: 16px;
-  font-weight: bold;
   cursor: pointer;
 }
 .whiteboard-item_body {
@@ -385,7 +421,7 @@ body {
   font-family: sans-serif;
 }
 .notablemind--workflowy {
-  margin: 5px auto;
+  margin: 0 auto;
   max-width: 700px;
 }
 .notablemind--whiteboard {
@@ -412,6 +448,9 @@ body {
   margin: 0;
   font-family: sans-serif;
   font-size: 14px;
+}
+.breadcrumb {
+  margin-bottom: 0;
 }
 .treed__bread {
   display: inline-block;
