@@ -29,14 +29,10 @@ View this page rendered at [notablemind.org](https://notablemind.org)
 [![screenshot](screenshot.png)](http://notablemind.org)
 <!-- @demobox /hide -->
 
-<!-- @demobox center -->
-
 <div class="center-ctoa">
   <a class="callout-button" target="_blank" title="view the tutorial" href="https://app.notablemind.org/?utm_source=home#/gist/jaredly/2a15dbba420eb509e12d">view the tutorial</a>
   <a target="_blank" href="https://gitter.im/notablemind/notablemind?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" title=""><img alt="Join the chat at https://gitter.im/notablemind/notablemind" src="https://badges.gitter.im/Join%20Chat.svg"/></a>
 </div>
-
-<!-- demobox /center -->
 
 Notablemind just hit alpha stage, which in this case means that most things
 are pretty solid, but some things are still being developed, and there's lots
@@ -47,6 +43,16 @@ Sign up above to be notified when things get a little more stable :)
 Or try it out now and tell me what breaks. [The
 tutorial](https://app.notablemind.org/?utm_source=header#/gist/jaredly/2a15dbba420eb509e12d)
 is a create place to get started.
+
+## Screenshots
+
+[![todo](todo-shot.png)](todo-shot.png)
+
+[![tutorial](tutorial-shot.png)](tutorial-shot.png)
+
+[![playground](playground-shot.png)](playground-shot.png)
+
+[![mona lisa](mona-lisa-shot.png)](mona-lisa-shot.png)
 
 ## **Notablemind** is a life manager
 

@@ -14,3 +14,15 @@ a.callout-button {
 .center-ctoa {
     text-align: center;
 }
+
+.head-screenshots img {
+    width: 23%;
+    height: 195px;
+    display: inline-block;
+    box-shadow: 0 0 5px rgb(0, 120, 194);
+    margin-right: 5px;
+}
+
+.head-screenshots p {
+    display: inline;
+}
