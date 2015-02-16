@@ -1,40 +1,194 @@
-<!DOCTYPE html>
-<html manifest="manifest.appcache">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="vendor/font-awesome-4.0.3/css/font-awesome.css"/>
-    <link rel="stylesheet" href="bundle/bundle.css"/>
-    <title>Notablemind</title>
-  </head>
-  <body>
-    <div id="example"></div>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf8">
+<link rel="icon" type="image/png" href="favicon-dark.png?w">
+<title>Notablemind</title>
 
-    <script src="vendor/marked.js"></script>
-    <script src="vendor/react.js"></script>
-    <script src="vendor/dropbox.js"></script>
-    <!--script src="vendor/gdrive.js"></script-->
+<link rel="stylesheet" href="https://jaredly.github.io/demobox/theme.css">
 
-    <script src="bundle/bundle.js"></script>
-    <script>
-        Notablemind(document.getElementById('example'))
-    </script>
+<link href="https://fonts.googleapis.com/css?family=Fugaz+One|Monda" rel="stylesheet"/>
+<style>
 
-  <!--
-    <a href="https://github.com/jaredly/treed"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
-    <script>
+#header {
+    font-family: "Fugaz One", sans-serif;
+}
 
+#main {
+    font-family: "Monda", serif;
+}
+
+#header {
+    background-color: #2196f3;
+}
+
+#header .subtitle {
+    color: #e3f2fd;
+}
+
+.link {
+    background-color: #0d47a1;
+}
+
+.link:hover {
+    background-color: #1976d2;
+}
+
+.link[href=""] {
+    background-color: #1976d2;
+    cursor: normal;
+}
+
+.DemoBox_head {
+    background-color: #2196f3;
+    color: white;
+}
+
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="box.css">
+
+
+
+<link href="https://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+<style>
+#mc_embed_signup{
+    background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;
+}
+/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+    We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+
+#mc_embed_signup #mce-EMAIL {
+    display: inline;
+    margin: 0 10px;
+    padding: 0 10px;
+    width: 400px;
+    background-color: white;
+    height: 43px;
+    font-size: 20px;
+}
+
+#mc_embed_signup #mc-embedded-subscribe {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    clear: none;
+    width: 200px;
+    font-size: 20px;
+    height: 45px;
+}
+
+#mc_embed_signup {
+    background: #eee;
+    border-radius: 5px;
+    text-align: center;
+    width: 800px;
+    margin: 20px auto 20px;
+    box-shadow: 0 3px 8px #555;
+    padding: 10px 0;
+}
+#mc_embed_signup form {
+    text-align: center;
+}
+#mc_embed_signup .mc_tag {
+    font-size: 24px;
+    margin: 0 0 20px;
+    display: block;
+    font-weight: bold;
+}
+</style>
+
+<script></script>
+<style></style>
+</head>
+<body>
+
+
+<header id="header">
+    <div class="title">
+        <img src="logo.png">
+    </div>
+    <div class="subtitle">
+        All your mind. All your notes.
+    </div>
+
+    <a class="link" href="">home</a>
+<a class="link" href="https://app.notablemind.org" target="_blank">launch app</a>
+<a class="link" href="https://github.com/notablemind/notablemind" target="_blank">github</a>
+
+</header>
+
+    <div id="signup">
+        <!-- Begin MailChimp Signup Form -->
+        <div id="mc_embed_signup">
+        <form action="https://notablemind.us9.list-manage.com/subscribe/post?u=06957907f913466231800b717&amp;id=5435bae35f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <span class="mc_tag">Let me know when Notablemind is ready!</span>
+            <div id="mc_embed_signup_scroll">
+        
+        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;"><input type="text" name="b_06957907f913466231800b717_5435bae35f" tabindex="-1" value=""></div>
+            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            </div>
+        </form>
+        </div>
+    </div>
+
+<section id="main">
+
+
+
+
+<!--End mc_embed_signup-->
+<!-- @demobox center -->
+
+<div class="center-ctoa">
+  <a class="callout-button" target="_blank" title="view the tutorial" href="https://app.notablemind.org/?utm_source=home#/gist/jaredly/2a15dbba420eb509e12d">view the tutorial</a>
+  <a target="_blank" href="https://gitter.im/notablemind/notablemind?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" title=""><img alt="Join the chat at https://gitter.im/notablemind/notablemind" src="https://badges.gitter.im/Join%20Chat.svg"/></a>
+</div>
+
+<!-- demobox /center -->
+
+<p>Notablemind just hit alpha stage, which in this case means that most things
+are pretty solid, but some things are still being developed, and there&#39;s lots
+of testing that still needs to happen.</p>
+<p>Sign up above to be notified when things get a little more stable :)</p>
+<p>Or try it out now and tell me what breaks. <a href="https://app.notablemind.org/?utm_source=header#/gist/jaredly/2a15dbba420eb509e12d" target="_blank">The
+tutorial</a>
+is a create place to get started.</p>
+
+<a name="notablemind-is-a-life-manager"></a>
+<section>
+<h2><a href="#notablemind-is-a-life-manager"><strong>Notablemind</strong> is a life manager</a></h2>
+<p>It is useful for</p>
+<ul>
+<li>note taking</li>
+<li>journaling</li>
+<li>writing &amp; composition</li>
+<li>task/project management</li>
+<li>UI rapid prototyping</li>
+</ul>
+<p>It draws inspiration from</p>
+<ul>
+<li>Workflowy</li>
+<li>Evernote</li>
+<li>Trello</li>
+<li>Whiteboards</li>
+<li>GinkoApp</li>
+</ul>
+</section>
+<footer>
+    <p>page rendered with <a href="https://jaredly.github.io/demobox">demobox</a></p>
+    <p>view the <a href="https://github.com/notablemind/notablemind.github.io/raw/master/src/index.md">markdown source</a> for this page</p>
+</footer>
+<script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
-    Date();a=s.createElement(o),
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-7002862-5', 'jaredly.github.io');
+    ga('create', 'UA-7002862-5', 'auto');
     ga('send', 'pageview');
-
-    </script>
-  -->
-  </body>
+  </script>
+</body>
 </html>
-
-
