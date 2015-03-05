@@ -30,7 +30,7 @@ View this page rendered at [notablemind.org](https://notablemind.org)
 <!-- @demobox /hide -->
 
 <div class="center-ctoa">
-  <a class="callout-button" target="_blank" title="view the tutorial" href="https://app.notablemind.org/?utm_source=home#/gist/jaredly/2a15dbba420eb509e12d">view the tutorial</a>
+  <a class="callout-button" target="_blank" title="view the tutorial" href="https://app.notablemind.org/tutorial/">view the tutorial</a>
   <a target="_blank" href="https://gitter.im/notablemind/notablemind?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge" title=""><img alt="Join the chat at https://gitter.im/notablemind/notablemind" src="https://badges.gitter.im/Join%20Chat.svg"/></a>
 </div>
 
@@ -41,8 +41,8 @@ of testing that still needs to happen.
 Sign up above to be notified when things get a little more stable :)
 
 Or try it out now and tell me what breaks. [The
-tutorial](https://app.notablemind.org/?utm_source=header#/gist/jaredly/2a15dbba420eb509e12d)
-is a create place to get started.
+tutorial](https://app.notablemind.org/tutorial/)
+is a great place to get started.
 
 ## Screenshots
 
